@@ -1,12 +1,12 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Main from "./pages/Main";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello, World!</h1>
-    </div>
-  );
-}
-
-export default App;
+export default () => (
+  <BrowserRouter>
+    <Navbar />
+    <Route exact path="/" component={Main} />
+  </BrowserRouter>
+);
