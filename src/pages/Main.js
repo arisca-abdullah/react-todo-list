@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Table,
-  Form,
-  Button,
-  Modal
-} from "react-bootstrap";
+import { Container, Row, Col, Table, Form, Button } from "react-bootstrap";
+import AddTodo from "../components/AddTodo";
+import Modal from "../components/Modal";
 
 export default class Main extends React.Component {
   state = {
@@ -29,9 +23,28 @@ export default class Main extends React.Component {
       }
     ],
     modal: {
-      id: 0,
       show: false
     }
+  };
+
+  labelStyle = todoCompleted => ({
+    textDecoration: todoCompleted ? "line-through" : ""
+  });
+
+  addTodo = title => {
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {
+          id:
+            this.state.todos.length > 0
+              ? Math.max(...this.state.todos.map(todo => todo.id)) + 1
+              : 1,
+          title,
+          completed: false
+        }
+      ]
+    });
   };
 
   changeTodo = id => {
@@ -50,12 +63,17 @@ export default class Main extends React.Component {
     });
   };
 
+  setModal = modal => {
+    this.setState({ modal });
+  };
+
   render = () => (
     <React.Fragment>
       <Container className="pt-3 px-0">
         <Row className="justify-content-center">
           <Col xl="7" lg="8" md="9" sm="10" xs="10">
-            <Table striped bordered hover>
+            <AddTodo addTodo={this.addTodo} />
+            <Table className="mt-3" striped bordered hover>
               <tbody>
                 {this.state.todos.map(todo => (
                   <tr key={todo.id}>
@@ -68,19 +86,18 @@ export default class Main extends React.Component {
                           onChange={this.changeTodo.bind(this, todo.id)}
                         ></Form.Check.Input>
                         <Form.Check.Label
-                          for={todo.id}
-                          style={{
-                            textDecoration: todo.completed ? "line-through" : ""
-                          }}
+                          htmlFor={todo.id}
+                          style={this.labelStyle(todo.completed)}
                         >
                           {todo.title}
                         </Form.Check.Label>
                       </Form.Check>
                       <Button
                         variant="danger"
-                        onClick={() =>
-                          this.setState({ modal: { id: todo.id, show: true } })
-                        }
+                        onClick={this.setModal.bind(this, {
+                          id: todo.id,
+                          show: true
+                        })}
                       >
                         Delete
                       </Button>
@@ -93,32 +110,10 @@ export default class Main extends React.Component {
         </Row>
       </Container>
       <Modal
-        size="sm"
-        show={this.state.modal.show}
-        onHide={() => this.setState({ modal: { show: false } })}
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Delete todo</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>Are you sure to delete this todo?</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="secondary"
-            onClick={() => this.setState({ modal: { show: false } })}
-          >
-            Cancel
-          </Button>
-          <Button
-            variant="danger"
-            onClick={this.deleteTodo.bind(this, this.state.modal.id)}
-          >
-            Delete
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        modal={this.state.modal}
+        setModal={this.setModal}
+        deleteTodo={this.deleteTodo}
+      />
     </React.Fragment>
   );
 }
