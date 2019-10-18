@@ -72,6 +72,7 @@ export default class Main extends React.Component {
       <Container className="pt-3 px-0">
         <Row className="justify-content-center">
           <Col xl="7" lg="8" md="9" sm="10" xs="10">
+            <h1>Todo List</h1>
             <AddTodo addTodo={this.addTodo} />
             <Table className="mt-3" striped bordered hover>
               <tbody>
