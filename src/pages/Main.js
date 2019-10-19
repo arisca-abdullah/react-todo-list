@@ -2,49 +2,33 @@ import React from "react";
 import { Container, Row, Col, Table, Form, Button } from "react-bootstrap";
 import AddTodo from "../components/AddTodo";
 import Modal from "../components/Modal";
+import axios from "axios";
 
 export default class Main extends React.Component {
   state = {
-    todos: [
-      {
-        id: 1,
-        title: "Sarapan",
-        completed: true
-      },
-      {
-        id: 2,
-        title: "Makan Siang",
-        completed: false
-      },
-      {
-        id: 3,
-        title: "Makan Malam",
-        completed: false
-      }
-    ],
+    todos: [],
     modal: {
       show: false
     }
   };
+
+  componentDidMount() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .then(res => this.setState({ todos: res.data }));
+  }
 
   labelStyle = todoCompleted => ({
     textDecoration: todoCompleted ? "line-through" : ""
   });
 
   addTodo = title => {
-    this.setState({
-      todos: [
-        ...this.state.todos,
-        {
-          id:
-            this.state.todos.length > 0
-              ? Math.max(...this.state.todos.map(todo => todo.id)) + 1
-              : 1,
-          title,
-          completed: false
-        }
-      ]
-    });
+    axios
+      .post("https://jsonplaceholder.typicode.com/todos", {
+        title,
+        completed: false
+      })
+      .then(res => this.setState({ todos: [...this.state.todos, res.data] }));
   };
 
   changeTodo = id => {
