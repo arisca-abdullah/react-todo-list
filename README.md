@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Todo List React
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Built with](#built-with)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Contributor](#contributor)
 
-### `yarn start`
+## Introduction
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Todo list react is a simple todo list app created using [react-bootstrap](https://react-bootstrap.github.io) and uses Online Fake REST API server ([ JSONPlaceholder ](https://jsonplaceholder.typicode.com/)).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Features
 
-### `yarn test`
+- Retrieve todos from JSONPlaceholder
+- Add todo
+- Change todo status
+- Delete todo
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built with
 
-### `yarn build`
+- [React](https://reactjs.org)
+- [Bootstrap](https://getbootstrap.com)
+- [React-Bootstrap](https://react-bootstrap.github.io)
+- [Axios](https://www.npmjs.com/package/axios)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [Node.js](https://nodejs.org/)
+- Text editor ( ex. [Visual Studio Code](https://code.visualstudio.com/), [Atom](https://atom.io/) )
+- Browser ( ex. [Google Chrome](https://www.google.com/chrome/index.html), [Firefox](https://www.mozilla.org/en-US/firefox/new/) )
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `yarn eject`
+1. Make sure node.js and git is installed correctly on your operating system
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Open your terminal or command prompt then run
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# clone this repository into your operating system
+git clone https://github.com/arisca-abdullah/todo-list-react.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# move to project folder
+cd todo-list-react
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# install project dependencies
+npm install
+#or
+yarn install
 
-## Learn More
+# run app in development mode
+# it will open http://localhost:3000 in the browser
+npm start
+#or
+yarn start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# build app for production
+npm run build
+#or
+yarn build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributor
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Arisca Abdullah](https://github.com/arisca-abdullah)
