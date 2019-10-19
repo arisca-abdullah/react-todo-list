@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 export default () => (
   <React.Fragment>
-    <Container className="pt-3 px-0">
+    <Container className="pt-3">
       <h1>About</h1>
       <p>Todo list app with react-bootstrap</p>
     </Container>
