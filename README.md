@@ -41,7 +41,7 @@ React todo list is a simple todo list app created using [react-bootstrap](https:
 
 ```bash
 # clone this repository into your operating system
-git clone https://github.com/arisca-abdullah/todo-list-react.git
+git clone https://github.com/arisca-abdullah/react-todo-list.git
 
 # move to project folder
 cd todo-list-react
