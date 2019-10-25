@@ -1,4 +1,4 @@
-# Todo List React
+# React Todo List
 
 ## Table of Contents
 
@@ -11,11 +11,11 @@
 
 ## Introduction
 
-Todo list react is a simple todo list app created using [react-bootstrap](https://react-bootstrap.github.io) and uses Online Fake REST API server ([ JSONPlaceholder ](https://jsonplaceholder.typicode.com/)).
+React todo list is a simple todo list app created using [react-bootstrap](https://react-bootstrap.github.io) and uses Online Fake REST API server ([ JSONPlaceholder ](https://jsonplaceholder.typicode.com/)).
 
 ## Features
 
-- Retrieve todos from JSONPlaceholder
+- Retrieve todos from [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 - Add todo
 - Change todo status
 - Delete todo
