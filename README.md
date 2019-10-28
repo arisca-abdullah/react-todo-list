@@ -63,6 +63,10 @@ npm run build
 yarn build
 ```
 
+## Demo
+
+[https://arisca-abdullah.github.io/react-todo-list](https://arisca-abdullah.github.io/react-todo-list)
+
 ## Contributor
 
 [Arisca Abdullah](https://github.com/arisca-abdullah)
