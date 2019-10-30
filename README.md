@@ -7,6 +7,7 @@
 - [Built with](#built-with)
 - [Requirements](#requirements)
 - [Usage](#usage)
+- [Demo](#demo)
 - [Contributor](#contributor)
 
 ## Introduction
